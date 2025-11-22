@@ -55,6 +55,10 @@ class SimpleBrowser(QMainWindow):
         self.url_bar.returnPressed.connect(self.navigate_to_url)
         navtb.addWidget(self.url_bar)
 
+        go_btn = QAction("→ Go", self)
+        go_btn.triggered.connect(self.navigate_to_url)
+        navtb.addAction(go_btn)
+
         self.browser.urlChanged.connect(self.update_urlbar)
 
         self.setWindowTitle("Classic Browser with Tweak")
